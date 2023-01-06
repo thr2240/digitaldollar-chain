@@ -1,0 +1,21 @@
+{
+  "metadata": [
+    {
+      "description": 1,
+      "denom_units": [
+        {
+          "denom": "pose",
+          "exponent": 0
+        },
+        {
+          "denom": "evmos",
+          "exponent": 18
+        }
+      ],
+      "base": "pose",
+      "display": "pose",
+      "name": "pose",
+      "symbol": "EVMOS"
+    }
+  ]
+}
