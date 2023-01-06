@@ -256,9 +256,9 @@ func TestGetReceivedCoin(t *testing.T) {
 			"channel-0",
 			"transfer",
 			"channel-0",
-			"transfer/channel-0/pose",
+			"transfer/channel-0/karma",
 			"10",
-			sdk.Coin{Denom: "pose", Amount: sdk.NewInt(10)},
+			sdk.Coin{Denom: "karma", Amount: sdk.NewInt(10)},
 		},
 		{
 			"transfer 2x ibc wrapped coin to destination which is its source",
@@ -296,14 +296,14 @@ func TestGetSentCoin(t *testing.T) {
 		expCoin   sdk.Coin
 	}{
 		{
-			"get unwrapped pose coin",
-			"pose",
+			"get unwrapped karma coin",
+			"karma",
 			"10",
-			sdk.Coin{Denom: "pose", Amount: sdk.NewInt(10)},
+			sdk.Coin{Denom: "karma", Amount: sdk.NewInt(10)},
 		},
 		{
-			"get ibc wrapped pose coin",
-			"transfer/channel-0/pose",
+			"get ibc wrapped karma coin",
+			"transfer/channel-0/karma",
 			"10",
 			sdk.Coin{Denom: teststypes.poseIbcdenom, Amount: sdk.NewInt(10)},
 		},

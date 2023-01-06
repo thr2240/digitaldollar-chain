@@ -96,14 +96,14 @@ func (suite *UpgradeTestSuite) TestMigrateFaucetBalance() {
 				address := common.BytesToAddress(priv.PubKey().Address().Bytes())
 				sender := sdk.AccAddress(address.Bytes())
 				res, _ := sdk.NewIntFromString(v9.MaxRecover)
-				coins := sdk.NewCoins(sdk.NewCoin("pose", res))
+				coins := sdk.NewCoins(sdk.NewCoin("karma", res))
 				suite.app.BankKeeper.MintCoins(suite.ctx, types.ModuleName, coins)
 				suite.app.BankKeeper.SendCoinsFromModuleToAccount(suite.ctx, types.ModuleName, sender, coins)
 				err = suite.app.DistrKeeper.FundCommunityPool(suite.ctx, coins, sender)
 				suite.Require().NoError(err)
 
 				balanceBefore := suite.app.DistrKeeper.GetFeePoolCommunityCoins(suite.ctx)
-				suite.Require().Equal(balanceBefore.AmountOf("pose"), sdk.NewDecFromInt(res))
+				suite.Require().Equal(balanceBefore.AmountOf("karma"), sdk.NewDecFromInt(res))
 			},
 			true,
 		},
@@ -117,14 +117,14 @@ func (suite *UpgradeTestSuite) TestMigrateFaucetBalance() {
 				address := common.BytesToAddress(priv.PubKey().Address().Bytes())
 				sender := sdk.AccAddress(address.Bytes())
 				res, _ := sdk.NewIntFromString(v9.MaxRecover)
-				coins := sdk.NewCoins(sdk.NewCoin("pose", res))
+				coins := sdk.NewCoins(sdk.NewCoin("karma", res))
 				suite.app.BankKeeper.MintCoins(suite.ctx, types.ModuleName, coins)
 				suite.app.BankKeeper.SendCoinsFromModuleToAccount(suite.ctx, types.ModuleName, sender, coins)
 				err = suite.app.DistrKeeper.FundCommunityPool(suite.ctx, coins, sender)
 				suite.Require().NoError(err)
 
 				balanceBefore := suite.app.DistrKeeper.GetFeePoolCommunityCoins(suite.ctx)
-				suite.Require().Equal(balanceBefore.AmountOf("pose"), sdk.NewDecFromInt(res))
+				suite.Require().Equal(balanceBefore.AmountOf("karma"), sdk.NewDecFromInt(res))
 
 				v9.Accounts[0][1] = v9.MaxRecover
 			},
@@ -140,14 +140,14 @@ func (suite *UpgradeTestSuite) TestMigrateFaucetBalance() {
 				address := common.BytesToAddress(priv.PubKey().Address().Bytes())
 				sender := sdk.AccAddress(address.Bytes())
 				res, _ := sdk.NewIntFromString(v9.MaxRecover)
-				coins := sdk.NewCoins(sdk.NewCoin("pose", res))
+				coins := sdk.NewCoins(sdk.NewCoin("karma", res))
 				suite.app.BankKeeper.MintCoins(suite.ctx, types.ModuleName, coins)
 				suite.app.BankKeeper.SendCoinsFromModuleToAccount(suite.ctx, types.ModuleName, sender, coins)
 				err = suite.app.DistrKeeper.FundCommunityPool(suite.ctx, coins, sender)
 				suite.Require().NoError(err)
 
 				balanceBefore := suite.app.DistrKeeper.GetFeePoolCommunityCoins(suite.ctx)
-				suite.Require().Equal(balanceBefore.AmountOf("pose"), sdk.NewDecFromInt(res))
+				suite.Require().Equal(balanceBefore.AmountOf("karma"), sdk.NewDecFromInt(res))
 
 				v9.Accounts[1000][1] = v9.MaxRecover
 			},
@@ -176,7 +176,7 @@ func (suite *UpgradeTestSuite) TestMigrateFaucetBalance() {
 				for i := range v9.Accounts {
 					addr := sdk.MustAccAddressFromBech32(v9.Accounts[i][0])
 					res, _ := sdk.NewIntFromString(v9.Accounts[i][1])
-					balance := suite.app.BankKeeper.GetBalance(suite.ctx, addr, "pose")
+					balance := suite.app.BankKeeper.GetBalance(suite.ctx, addr, "karma")
 					suite.Require().Equal(balance.Amount, res)
 				}
 
@@ -185,7 +185,7 @@ func (suite *UpgradeTestSuite) TestMigrateFaucetBalance() {
 			} else {
 				for i := range v9.Accounts {
 					addr := sdk.MustAccAddressFromBech32(v9.Accounts[i][0])
-					balance := suite.app.BankKeeper.GetBalance(suite.ctx, addr, "pose")
+					balance := suite.app.BankKeeper.GetBalance(suite.ctx, addr, "karma")
 					suite.Require().Equal(balance.Amount, sdk.NewInt(0))
 				}
 			}

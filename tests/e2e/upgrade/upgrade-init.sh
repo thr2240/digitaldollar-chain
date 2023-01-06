@@ -26,12 +26,12 @@ digitaldollard keys add "$KEY" --keyring-backend $KEYRING --algo "$KEYALGO"
 # Set moniker and chain-id for Evmos (Moniker can be anything, chain-id must be an integer)
 digitaldollard init "$MONIKER" --chain-id "$CHAINID"
 
-# Change parameter token denominations to pose
-cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["staking"]["params"]["bond_denom"]="pose"' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
-cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["crisis"]["constant_fee"]["denom"]="pose"' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
-cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["gov"]["deposit_params"]["min_deposit"][0]["denom"]="pose"' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
-cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["evm"]["params"]["evm_denom"]="pose"' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
-cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["inflation"]["params"]["mint_denom"]="pose"' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
+# Change parameter token denominations to karma
+cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["staking"]["params"]["bond_denom"]="karma"' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
+cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["crisis"]["constant_fee"]["denom"]="karma"' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
+cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["gov"]["deposit_params"]["min_deposit"][0]["denom"]="karma"' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
+cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["evm"]["params"]["evm_denom"]="karma"' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
+cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["inflation"]["params"]["mint_denom"]="karma"' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
 
 # set gov proposing && voting period
 cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["gov"]["deposit_params"]["max_deposit_period"]="30s"' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
@@ -55,7 +55,7 @@ cat "$HOME"/.digitaldollard/config/genesis.json | jq '.app_state["claims"]["para
 
 # Claim module account:
 # 0xA61808Fe40fEb8B3433778BBC2ecECCAA47c8c47 || evmos15cvq3ljql6utxseh0zau9m8ve2j8erz89m5wkz
-cat "$HOME"/.digitaldollard/config/genesis.json | jq -r --arg amount_to_claim "$amount_to_claim" '.app_state["bank"]["balances"] += [{"address":"pose1s52syxavznw2849aw9wh86uryjsz2647yd58dh","coins":[{"denom":"pose", "amount":$amount_to_claim}]}]' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
+cat "$HOME"/.digitaldollard/config/genesis.json | jq -r --arg amount_to_claim "$amount_to_claim" '.app_state["bank"]["balances"] += [{"address":"pose1s52syxavznw2849aw9wh86uryjsz2647yd58dh","coins":[{"denom":"karma", "amount":$amount_to_claim}]}]' > "$HOME"/.digitaldollard/config/tmp_genesis.json && mv "$HOME"/.digitaldollard/config/tmp_genesis.json "$HOME"/.digitaldollard/config/genesis.json
 
 # disable produce empty block
 if [[ "$OSTYPE" == "darwin"* ]]; then

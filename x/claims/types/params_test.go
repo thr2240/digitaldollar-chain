@@ -128,7 +128,7 @@ func TestParamsvalidateDuration(t *testing.T) {
 }
 
 func TestParamsValidateDenom(t *testing.T) {
-	err := validateDenom("pose")
+	err := validateDenom("karma")
 	require.NoError(t, err)
 	err = validateDenom(false)
 	require.Error(t, err)

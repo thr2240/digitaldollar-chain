@@ -19,7 +19,7 @@ var (
 
 	Udigitaldollardenomtrace = transfertypes.DenomTrace{
 		Path:      "transfer/channel-0",
-		BaseDenom: "pose",
+		BaseDenom: "karma",
 	}
 	UevmosIbcdenom = Udigitaldollardenomtrace.IBCDenom()
 
@@ -31,7 +31,7 @@ var (
 
 	Adigitaldollardenomtrace = transfertypes.DenomTrace{
 		Path:      "transfer/channel-0",
-		BaseDenom: "pose",
+		BaseDenom: "karma",
 	}
 	poseIbcdenom = Adigitaldollardenomtrace.IBCDenom()
 )

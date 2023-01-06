@@ -113,7 +113,7 @@ The file `unsignedTx.json` contains the unsigned transaction encoded in JSON.
         "to_address": "evmos157g6rn6t6k5rl0dl57zha2wx72t633axqyvvwq",
         "amount": [
           {
-            "denom": "pose",
+            "denom": "karma",
             "amount": "5000000000000000000"
           }
         ]
@@ -129,7 +129,7 @@ The file `unsignedTx.json` contains the unsigned transaction encoded in JSON.
     "fee": {
       "amount": [
         {
-          "denom": "pose",
+          "denom": "karma",
           "amount": "1000000"
         }
       ],
@@ -189,7 +189,7 @@ The TX is now signed:
         "to_address": "evmos157g6rn6t6k5rl0dl57zha2wx72t633axqyvvwq",
         "amount": [
           {
-            "denom": "pose",
+            "denom": "karma",
             "amount": "5000000000000000000"
           }
         ]
@@ -247,7 +247,7 @@ The TX is now signed:
     "fee": {
       "amount": [
         {
-          "denom": "pose",
+          "denom": "karma",
           "amount": "1000000"
         }
       ],

@@ -22,18 +22,18 @@ genesis:
   app_state:
     staking:
       params:
-        bond_denom: "pose"
+        bond_denom: "karma"
     mint:
       params:
-        mint_denom: "pose"
+        mint_denom: "karma"
     crisis:
       constant_fee:
-        denom: "pose"
+        denom: "karma"
     gov:
       deposit_params:
         min_deposit:
           - amount: "10000000"
-            denom: "pose"
+            denom: "karma"
     evm:
       params:
-        evm_denom: "pose"
+        evm_denom: "karma"

@@ -4,7 +4,7 @@
       "description": "The native staking and governance token of the Evmos chain",
       "denom_units": [
         {
-          "denom": "pose",
+          "denom": "karma",
           "exponent": 0
         },
         {
@@ -12,9 +12,9 @@
           "exponent": 18
         }
       ],
-      "base": "pose",
-      "display": "pose",
-      "name": "pose",
+      "base": "karma",
+      "display": "karma",
+      "name": "karma",
       "symbol": "EVMOS"
     },
     {

@@ -62,8 +62,8 @@ For community pool spend proposals, there are five components:
 1. **Title** - the distinguishing name of the proposal, typically the way the that explorers list proposals
 2. **Description** - the body of the proposal that further describes what is being proposed and details surrounding the proposal
 3. **Recipient** - the Evmos (bech32-based) address that will receive funding from the Community Pool
-4. **Amount** - the amount of funding that the recipient will receive in atto-EVMOS (`pose`)
-5. **Deposit** - the amount that will be contributed to the deposit (in `pose`) from the account submitting the proposal
+4. **Amount** - the amount of funding that the recipient will receive in atto-EVMOS (`karma`)
+5. **Deposit** - the amount that will be contributed to the deposit (in `karma`) from the account submitting the proposal
 
 #### Made-Up Example
 
@@ -80,7 +80,7 @@ The `deposit` of `192000000000000000000pose` results in 192 EVMOS being used fro
   "recipient": "evmos1mx9nqk5agvlsvt2yc8259nwztmxq7zjq50mxkp",
   "amount": [
     {
-      "denom": "pose",
+      "denom": "karma",
       "amount": "1000000000000000000"
     }
   ],
@@ -107,7 +107,7 @@ Users can query the proposal details with the `digitaldollard` command-line inte
   "amount": [
     {
       "amount": "12900000000000000000000",
-      "denom": "pose"
+      "denom": "karma"
     }
   ],
   "deposit": "64000000000000000000pose"
@@ -127,8 +127,8 @@ For parameter-change proposals, there are seven components:
 3. **Subspace** - the Evmos module with the parameter that is being changed
 4. **Key** - the parameter that will be changed
 5. **Value** - the value of the parameter that will be changed by the governance mechanism
-6. **Denom** - `pose` (atto-EVMOS) will be the type of asset used as the deposit
-7. **Amount** - the amount that will be contributed to the deposit (in `pose`) from the account submitting the proposal
+6. **Denom** - `karma` (atto-EVMOS) will be the type of asset used as the deposit
+7. **Amount** - the amount that will be contributed to the deposit (in `karma`) from the account submitting the proposal
 
 #### Real Example
 
@@ -150,7 +150,7 @@ Users can query the proposal details with the digitaldollard command-line interf
     {
       "subspace": "gov",
       "key": "depositparams",
-      "value": {"mindeposit":[{"denom":"pose","amount":"64000000000000000000"}],
+      "value": {"mindeposit":[{"denom":"karma","amount":"64000000000000000000"}],
       "max_deposit_period":"1209600000000000"}
     }
   ],
@@ -158,7 +158,7 @@ Users can query the proposal details with the digitaldollard command-line interf
 }
 ```
 
-The deposit `denom` is `pose` and `amount` is `20100000000000000000`. Therefore, a deposit of 20.1 EVMOS will be included with this proposal. At the time, the EVMOS mainnet had a 10 EVMOS minimum deposit, so this proposal was put directly into the voting period (and subsequently passed). The minimum deposit amount is currently 192 EVMOS. There is a minimum deposit required for a proposal to enter the voting period, and anyone may contribute to this deposit within a 3-day period. If the minimum deposit isn't reached before this time, the deposit amounts will be burned.
+The deposit `denom` is `karma` and `amount` is `20100000000000000000`. Therefore, a deposit of 20.1 EVMOS will be included with this proposal. At the time, the EVMOS mainnet had a 10 EVMOS minimum deposit, so this proposal was put directly into the voting period (and subsequently passed). The minimum deposit amount is currently 192 EVMOS. There is a minimum deposit required for a proposal to enter the voting period, and anyone may contribute to this deposit within a 3-day period. If the minimum deposit isn't reached before this time, the deposit amounts will be burned.
 
 ## Sending the transaction that submits your governance proposal
 
@@ -235,4 +235,4 @@ Submitting your proposal to the testnet increases the likelihood that you will d
 
 - you'll need testnet tokens for your proposal (ask around for a [faucet](./../../developers/testnet/faucet.md))
 - the parameters for testnet proposals are different (eg. voting period timing, deposit amount, deposit denomination)
-- the deposit denomination is in `'atevmos'` instead of `'pose'`
+- the deposit denomination is in `'atevmos'` instead of `'karma'`
