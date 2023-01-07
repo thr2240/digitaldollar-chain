@@ -3,7 +3,7 @@
 KEYS[0]="dev0"
 KEYS[1]="dev1"
 KEYS[2]="dev2"
-CHAINID="compose_1-1"
+CHAINID="digitaldollar_1-1"
 MONIKER="lucas"
 # Remember to change to other types of keyring like 'file' in-case exposing to outside world,
 # otherwise your balance will be wiped quickly
@@ -142,4 +142,4 @@ fi
 
 # Start the node (remove the --pruning=nothing flag if historical queries are not needed)
 #digitaldollard start --pruning=nothing "$TRACE" --gas-prices 0.00001akarma --gas-adjustment 1.3 --log_level $LOGLEVEL --json-rpc.api eth,txpool,personal,net,debug,web3 --api.enable --home "$HOMEDIR"
-digitaldollard start --pruning=nothing "$TRACE" --rpc.laddr tcp://127.0.0.1:26657 --gas-prices 0.00001akarma --gas-adjustment 1.3 --log_level $LOGLEVEL --json-rpc.api eth,txpool,personal,net,debug,web3 --api.enable --home "$HOMEDIR"
+digitaldollard start --pruning=nothing "$TRACE" --rpc.laddr tcp://0.0.0.0:26657 --gas-prices 0.00001akarma --gas-adjustment 1.3 --log_level $LOGLEVEL --json-rpc.api eth,txpool,personal,net,debug,web3 --api.enable --home "$HOMEDIR"
