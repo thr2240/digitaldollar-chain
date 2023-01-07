@@ -76,3 +76,14 @@ For additional instructions, standards and style guides, please refer to the [Co
 ## Careers
 
 See our open positions on [Cosmos Jobs](https://jobs.cosmos.network/project/evmos-d0sk1uxuh-remote/), [Notion](https://tharsis.notion.site), or feel free to [reach out](mailto:careers@thars.is) via email.
+
+
+## for running local & main node
+ ./ main_node.sh
+
+## for running seed
+./ seed_node.sh
+
+# send tokens to seed validaotor and run following to create validator
+
+digitaldollard tx staking create-validator --from <VALIDATOR_KEY> --moniker thomas --pubkey $(digitaldollard tendermint show-validator) --chain-id <MAINNODE_CHAIN_ID> --keyring-backend test --amount 1karma --commission-max-change-rate 0.01 --commission-max-rate 0.2 --commission-rate 0.1 --min-self-delegation 1 --fees 20000akarma -b block --gas auto
